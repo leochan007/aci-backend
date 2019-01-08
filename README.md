@@ -1,1 +1,3 @@
-# aci-backend
+# alphacar-blockchain-service
+
+npm install typescript -g

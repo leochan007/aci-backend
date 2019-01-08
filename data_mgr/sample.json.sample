@@ -1,0 +1,51 @@
+[
+    {
+        "account":"18017390231",
+        "name": "小神阳", "personId": "32010619820818012x",
+        "comments": "qq:1", "registerTime": "2018-11-28 00:00:00",
+        "reason": "诈骗10000 ACAR", "recordTime": "2018-11-28 13:40:51",
+        "moralCrisisType": "骗取工分"
+    },
+    {
+        "account":"18017390231",
+        "name": "小神阳", "personId": "32010619820818012x",
+        "comments": "qq:2", "registerTime": "2018-11-28 23:59:59",
+        "reason": "连续3天取消订单达上限", "recordTime": "2018-11-28 23:59:59",
+        "moralCrisisType": "恶意刷单"
+    },
+    {
+        "account":"18017390231",
+        "name": "小神阳", "personId": "32010619820818012x",
+        "comments": "", "registerTime": "2018-11-30 00:00:00",
+        "reason": "衣冠不整，出口成脏", "recordTime": "2018-11-30 00:00:00",
+        "moralCrisisType": "不文明乘车"
+    },
+    {
+        "account":"18017370847",
+        "name": "郭得纲", "personId": "32010619820818014x",
+        "comments": "qq:3456789", "registerTime": "2018-12-01 00:00:00",
+        "reason": "连续5天取消订单达上限", "recordTime": "2018-12-01 00:00:00",
+        "moralCrisisType": "恶意刷单"
+    },
+    {
+        "account":"18017370847",
+        "name": "郭得纲", "personId": "32010619820818014x",
+        "comments": "qq:3456789", "registerTime": "2018-12-01 23:59:59",
+        "reason": "乘客临时放鸽子", "recordTime": "2018-12-01 23:59:59",
+        "moralCrisisType": "乘客爽约"
+    },
+    {
+        "account":"18017360789",
+        "name": "周利波", "personId": "32010619820818013x",
+        "comments": "qq:3456789", "registerTime": "2018-12-02 00:00:01",
+        "reason": "衣冠不整", "recordTime": "2018-12-02 00:00:01",
+        "moralCrisisType": "不文明乘车"
+    },
+    {
+        "account":"18017360789",
+        "name": "周利波", "personId": "32010619820818013x",
+        "comments": "qq:3456789", "registerTime": "2018-12-02 13:40:51",
+        "reason": "临时取消了订单", "recordTime": "2018-12-02 13:40:51",
+        "moralCrisisType": "车主爽约"
+    }
+]

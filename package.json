@@ -1,0 +1,50 @@
+{
+  "name": "alphacar-credit-inquiry-backend-service",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "rm .node-xmlhttprequest-sync*; node bin/www",
+    "dev": "rm .node-xmlhttprequest-sync*; pm2-dev start bin/www",
+    "dev2": "rm .node-xmlhttprequest-sync*; ./node_modules/.bin/nodemon bin/www",
+    "prd": "rm .node-xmlhttprequest-sync*; pm2 start bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "alphacarinquiry-commons": "../aci-commons",
+    "axios": "^0.18.0",
+    "babel-register": "^6.26.0",
+    "bignumber.js": "^8.0.1",
+    "csv": "^5.0.0",
+    "debug": "^4.1.0",
+    "eosjs": "^16.0.9",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.0.0",
+    "koa-router": "^7.1.1",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "koa2-cors": "^2.0.5",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.14",
+    "pug": "^2.0.0-rc.1",
+    "request": "^2.87.0",
+    "sjcl": "^1.0.8",
+    "socket.io": "^2.2.0",
+    "swagger-ui": "^3.17.2",
+    "swagger-ui-dist": "^3.17.2",
+    "swagger2-koa": "^1.0.1",
+    "truffle-contract": "^3.0.6",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "nodemon": "^1.18.7"
+  }
+}
