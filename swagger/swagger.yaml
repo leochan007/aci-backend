@@ -85,17 +85,11 @@ paths:
       description: get credit inquiry list by classification
       produces:
         - application/json
-      parameters:
-        - name: moral_crisis_type
-          in: query
-          description: the moral_crisis_type string.
-          required: true
-          type: string
       responses:
         200:
           description: CreditInquiry List response
           schema:
-            $ref: "#/definitions/CreditInquiryListResult"
+            $ref: "#/definitions/GroupItemListResult"
 
   /creditinquiry/list:
     get:
@@ -225,7 +219,6 @@ definitions:
         type: "integer"
         format: "int32"
 
-
   TxCountListResult:
     type: "object"
     properties:
@@ -242,3 +235,28 @@ definitions:
             items:
               type: "integer"
               format: "int32"
+
+  GroupItem:
+    type: "object"
+    properties:
+      _id:
+        type: "string"
+      count:
+        type: "integer"
+        format: "int32"
+
+  GroupItemListResult:
+    type: "object"
+    properties:
+      error_code:
+        type: "integer"
+        format: "int32"
+      error_msg:
+        type: "string"
+      data:
+        type: "object"
+        properties:
+          lst:
+            type: "array"
+            items:
+              $ref: "#/definitions/GroupItem"

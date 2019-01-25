@@ -4,7 +4,7 @@ const { aciService } = require('alphacarinquiry-commons');
 
 router.get('/aci_api/creditinquiry/latest',async (ctx, next) => {
     ctx.response.type = 'json';
-    await aciService.latestCreditInquiry(ctx);
+    await aciService.getLatestCreditInquiry(ctx);
     await next();
 })
 
@@ -22,7 +22,7 @@ router.get('/aci_api/creditinquiry/list', async (ctx, next) => {
 
 router.get('/aci_api/creditinquiry/classification', async (ctx, next) => {
     ctx.response.type = 'json';
-    await aciService.getCreditInquiryListByMoralCrisisType(ctx);
+    await aciService.getCountGroupByMoralCrisisType(ctx);
     await next();
 })
 
