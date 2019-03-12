@@ -2,22 +2,15 @@
 
 set -x
 
-PREFIX=nexus.alphacario.com:8089
-FLAG=testnet_stg
+source module_def.sh
 
 if [ -n "$1" ]; then
   FLAG=$1
 fi
 
-VER=`git rev-parse HEAD`
-
-img_name=aci-backend
-
 if [ "testnet" != "$FLAG" ]; then
   img_name=$img_name-stg
 fi
-
-echo 'img_name:'$img_name
 
 docker rmi $img_name
 
