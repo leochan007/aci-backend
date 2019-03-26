@@ -12,7 +12,8 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
 const index_c = require('./routes/index_controller')
-const mongo_c = require('./routes/mongo_controller')
+const ci_c = require('./routes/ci_controller')
+const rr_c = require('./routes/rr_controller')
 
 // error handler
 onerror(app)
@@ -34,7 +35,8 @@ app.use(async (ctx, next) => {
 
 // routes
 app.use(index_c.routes(), index_c.allowedMethods())
-app.use(mongo_c.routes(), mongo_c.allowedMethods())
+app.use(ci_c.routes(), ci_c.allowedMethods())
+app.use(rr_c.routes(), rr_c.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

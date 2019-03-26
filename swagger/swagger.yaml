@@ -149,35 +149,89 @@ paths:
           schema:
             $ref: "#/definitions/TxCountListResult"
 
+  /rewardrecord/latest:
+    get:
+      tags: [Reward Record]
+      summary: get latest Reward Record
+      description: get latest Reward Record
+      produces:
+        - application/json
+      responses:
+        200:
+          description: infos response
+          schema:
+            $ref: "#/definitions/RewardRecordResult"
+
 definitions:
 
-  CreditInquiry:
+  RewardRecord:
     type: "object"
     properties:
-      create_time:
+      createTime:
         type: "integer"
         format: "int64"
-      account:
+      activityType:
         type: "string"
+      issueNumber:
+        type: "integer"
+        format: "int32"
+      ranking:
+        type: "integer"
+        format: "int8"
       name:
         type: "string"
-      person_id:
+      account:
         type: "string"
       comments:
         type: "string"
-      register_time:
-        type: "integer"
-        format: "int64"
-      reason:
-        type: "string"
-      record_time:
+      recordTime:
         type: "integer"
         format: "int64"
       money:
         type: "string"
       hash:
         type: "string"
-      tx_id:
+      txId:
+        type: "string"
+
+  RewardRecordResult:
+    type: "object"
+    properties:
+      error_code:
+        type: "integer"
+        format: "int32"
+      error_msg:
+        type: "string"
+      data:
+        $ref: "#/definitions/RewardRecord"
+
+  CreditInquiry:
+    type: "object"
+    properties:
+      createTime:
+        type: "integer"
+        format: "int64"
+      account:
+        type: "string"
+      name:
+        type: "string"
+      personId:
+        type: "string"
+      comments:
+        type: "string"
+      registerTime:
+        type: "integer"
+        format: "int64"
+      reason:
+        type: "string"
+      recordTime:
+        type: "integer"
+        format: "int64"
+      money:
+        type: "string"
+      hash:
+        type: "string"
+      txId:
         type: "string"
 
   CreditInquiryResult:
