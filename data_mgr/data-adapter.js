@@ -1,4 +1,9 @@
 const parse = require('csv-parse/lib/sync')
+const Papa = require('papaparse');
+
+const xlsx = require('node-xlsx');
+
+const XLSX = require('xlsx');
 
 const fs = require('fs');
 const path = require('path');
@@ -39,13 +44,53 @@ function getRecords() {
       records = records['RECORDS']
     }
   } else if (type === 'csv') {
+
+    console.log('raw_data:', raw_data);
+
+    /*
+    records = xlsx.parse(raw_data);
+
+    records = XLSX.read(raw_data, {type:'buffer'});
+
+    const config = {
+      delimiter: "",	// auto-detect
+      newline: "",	// auto-detect
+      quoteChar: '"',
+      escapeChar: '"',
+      header: true,
+      transformHeader: undefined,
+      dynamicTyping: false,
+      preview: 0,
+      encoding: "utf8",
+      worker: false,
+      comments: false,
+      step: undefined,
+      complete: undefined,
+      error: undefined,
+      download: false,
+      downloadRequestHeaders: undefined,
+      skipEmptyLines: false,
+      chunk: undefined,
+      fastMode: undefined,
+      beforeFirstChunk: undefined,
+      withCredentials: undefined,
+      transform: undefined,
+      delimitersToGuess: [',', '\t', '|', ';', Papa.RECORD_SEP, Papa.UNIT_SEP]
+    };
+
+    records = Papa.parse(raw_data, config).data;
+    */
     records = parse(raw_data, {
       columns: true,
       delimiter: ',',
+      from: 1,
+      quote: '',
       relax: true,
-      rowDelimiter: '\n', // This is an issue, I had to set the \n here as 'auto' wasn't working, nor was 'windows'.  Maybe look at auto-detecting line endings?
+      trim: true,
+      record_delimiter: '\n', // This is an issue, I had to set the \n here as 'auto' wasn't working, nor was 'windows'.  Maybe look at auto-detecting line endings?
       skip_empty_lines: true
     })
+
   }
 
   return records;

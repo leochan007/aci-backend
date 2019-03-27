@@ -162,14 +162,47 @@ paths:
           schema:
             $ref: "#/definitions/RewardRecordResult"
 
+  /rewardrecord/list:
+    get:
+      tags: [Reward Record]
+      summary: get Reward Record by conditions
+      description: get Reward Record by conditions
+      produces:
+        - application/json
+      parameters:
+        - name: activity_type
+          in: query
+          description: the activity_type string.
+          required: true
+          type: string
+        - name: page_size
+          in: query
+          description: the page size.
+          required: false
+          type: "integer"
+          format: "int32"
+        - name: page
+          in: query
+          description: the page num.
+          required: false
+          type: "integer"
+          format: "int32"
+      responses:
+        200:
+          description: CreditInquiry List response
+          schema:
+            $ref: "#/definitions/CreditInquiryListResult"
+
 definitions:
 
   RewardRecord:
     type: "object"
     properties:
-      createTime:
-        type: "integer"
-        format: "int64"
+      create_Time:
+        type: "string"
+        format: "date-time"
+        pattern: "yyyy-MM-ddTHH:mm:ss.ZZZ"
+        example: "2019-03-25T16:00:00.000Z"
       activityType:
         type: "string"
       issueNumber:
@@ -177,18 +210,20 @@ definitions:
         format: "int32"
       ranking:
         type: "integer"
-        format: "int8"
+        format: "int32"
       name:
         type: "string"
       account:
         type: "string"
+      reward:
+        type: "string"
       comments:
         type: "string"
-      recordTime:
-        type: "integer"
-        format: "int64"
-      money:
+      record_Time:
         type: "string"
+        format: "date-time"
+        pattern: "yyyy-MM-ddTHH:mm:ss.ZZZ"
+        example: "2019-03-25T16:00:00.000Z"
       hash:
         type: "string"
       txId:
@@ -208,9 +243,11 @@ definitions:
   CreditInquiry:
     type: "object"
     properties:
-      createTime:
-        type: "integer"
-        format: "int64"
+      create_Time:
+        type: "string"
+        format: "date-time"
+        pattern: "yyyy-MM-ddTHH:mm:ss.ZZZ"
+        example: "2019-03-25T16:00:00.000Z"
       account:
         type: "string"
       name:
@@ -219,14 +256,18 @@ definitions:
         type: "string"
       comments:
         type: "string"
-      registerTime:
-        type: "integer"
-        format: "int64"
+      register_Time:
+        type: "string"
+        format: "date-time"
+        pattern: "yyyy-MM-ddTHH:mm:ss.ZZZ"
+        example: "2019-03-25T16:00:00.000Z"
       reason:
         type: "string"
-      recordTime:
-        type: "integer"
-        format: "int64"
+      record_Time:
+        type: "string"
+        format: "date-time"
+        pattern: "yyyy-MM-ddTHH:mm:ss.ZZZ"
+        example: "2019-03-25T16:00:00.000Z"
       money:
         type: "string"
       hash:

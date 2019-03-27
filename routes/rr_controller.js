@@ -16,7 +16,7 @@ router.get('/aci_api/rewardrecord/hash/:hash', async (ctx, next) => {
 
 router.get('/aci_api/rewardrecord/list', async (ctx, next) => {
     ctx.response.type = 'json';
-    await rrService.getRewardRecordList(ctx);
+    await rrService.getRewardRecordListByActivityType(ctx);
     await next();
 })
 

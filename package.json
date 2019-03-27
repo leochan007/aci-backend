@@ -15,8 +15,10 @@
     "babel-register": "^6.26.0",
     "bignumber.js": "^8.0.1",
     "csv": "^5.0.0",
+    "csv-parse": "^4.3.4",
     "debug": "^4.1.0",
     "eosjs": "^16.0.9",
+    "js-xlsx": "^0.8.22",
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
     "koa-convert": "^1.2.0",
@@ -29,6 +31,8 @@
     "koa2-cors": "^2.0.5",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.14",
+    "node-xlsx": "^0.14.1",
+    "papaparse": "^4.6.3",
     "pug": "^2.0.0-rc.1",
     "request": "^2.87.0",
     "sjcl": "^1.0.8",
@@ -37,6 +41,7 @@
     "swagger-ui-dist": "^3.17.2",
     "swagger2-koa": "^1.0.1",
     "truffle-contract": "^3.0.6",
+    "xlsx": "^0.14.1",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
