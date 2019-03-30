@@ -162,6 +162,25 @@ paths:
           schema:
             $ref: "#/definitions/RewardRecordResult"
 
+  /rewardrecord/hash/{hash}:
+    get:
+      tags: [Reward Record]
+      summary: get Reward Record
+      description: get Reward Record by hash
+      produces:
+        - application/json
+      parameters:
+        - name: hash
+          in: path
+          description: the hash string.
+          required: true
+          type: string
+      responses:
+        200:
+          description: infos response
+          schema:
+            $ref: "#/definitions/RewardRecordResult"
+
   /rewardrecord/list:
     get:
       tags: [Reward Record]
@@ -192,6 +211,38 @@ paths:
           description: CreditInquiry List response
           schema:
             $ref: "#/definitions/CreditInquiryListResult"
+
+  /rewardrecord/classification:
+    get:
+      tags: [Reward Record]
+      summary: get Reward Record list by classification
+      description: get Reward Record list by classification
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Reward Record List response
+          schema:
+            $ref: "#/definitions/GroupItemListResult"
+
+  /rewardrecord/groupinfo:
+    get:
+      tags: [Reward Record]
+      summary: get Reward Record list by classification
+      description: get Reward Record list by classification
+      produces:
+        - application/json
+      parameters:
+        - name: activity_type
+          in: query
+          description: the activity_type string.
+          required: true
+          type: string
+      responses:
+        200:
+          description: Reward Record List response
+          schema:
+            $ref: "#/definitions/GroupItemListResult"
 
 definitions:
 

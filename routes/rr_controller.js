@@ -20,9 +20,15 @@ router.get('/aci_api/rewardrecord/list', async (ctx, next) => {
     await next();
 })
 
+router.get('/aci_api/rewardrecord/groupinfo', async (ctx, next) => {
+    ctx.response.type = 'json';
+    await rrService.getRewardRecordGroupByActivityType(ctx);
+    await next();
+})
+
 router.get('/aci_api/rewardrecord/classification', async (ctx, next) => {
     ctx.response.type = 'json';
-    await rrService.getCountGroupByActivityType(ctx);
+    await rrService.getRewardRecordGroup(ctx);
     await next();
 })
 

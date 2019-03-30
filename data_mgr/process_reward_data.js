@@ -85,7 +85,11 @@ async function push2EOS(datas) {
   const eos_info = await eos.getInfo({});
   console.log('eos_info:', eos_info);
 
+  let count = 0;
+
   for (var ind in datas) {
+
+    count += 1;
 
     try {
       const eos_tx = await eos.transaction({
@@ -115,7 +119,7 @@ async function push2EOS(datas) {
         new: true
       }).exec();
 
-      console.log(result_new);
+      console.log('count:', count, " ", result_new);
 
     } catch (error) {
       console.log(error)
